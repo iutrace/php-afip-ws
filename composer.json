@@ -1,5 +1,5 @@
 {
-  "name": "lukascorr/php-afip-ws",
+  "name": "iutrace/php-afip-ws",
   "description": "Librería PHP para interactuar con el webservice de AFIP (Argentina -> factura electrónica).",
   "type": "library",
   "keywords": [
@@ -29,7 +29,7 @@
     "issues": "https://github.com/multinexo/php-afip-ws/issues"
   },
   "require": {
-    "php": ">=7.1",
+    "php": ">=8.0",
     "ext-json": "*",
     "ext-soap": "*",
     "ext-simplexml": "*",
