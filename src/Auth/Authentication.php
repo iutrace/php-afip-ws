@@ -74,6 +74,14 @@ class Authentication
                 'location' => $this->configuracion->url->{$this->ws},
                 'exceptions' => 0,
                 'trace' => 1,
+                'stream_context' => stream_context_create(options: [
+                    'ssl' => [
+                        'verify_peer' => true,
+                        'verify_peer_name' => true,
+                        'allow_self_signed' => false,
+                        'ciphers' => 'DEFAULT:@SECLEVEL=1'
+                    ]
+                ])
             ]
         );
     }
