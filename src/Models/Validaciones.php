@@ -239,7 +239,7 @@ trait Validaciones
             $validaciones[] = v::attribute($key, $reglas->{$key});
         }
 
-        $validador = v::allOf($validaciones);
+        $validador = v::allOf(...$validaciones);
 
         try {
             $validador->assert($datos);
