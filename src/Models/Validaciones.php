@@ -244,7 +244,7 @@ trait Validaciones
         try {
             $validador->assert($datos);
         } catch (NestedValidationException $exception) {
-            $errors_translated = array_diff($exception->findMessages($this->getErrorMessages()), ['']);
+            $errors_translated = array_diff($exception->getMessages(), ['']);
             $errors = empty($errors_translated) ? ['error' => $exception->getMessage()] : $errors_translated;
             foreach ($errors as $error) {
                 throw new ValidationException($error);
