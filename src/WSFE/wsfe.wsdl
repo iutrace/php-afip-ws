@@ -78,6 +78,7 @@
                     <s:element minOccurs="0" maxOccurs="1" name="Tributos" type="tns:ArrayOfTributo"/>
                     <s:element minOccurs="0" maxOccurs="1" name="Iva" type="tns:ArrayOfAlicIva"/>
                     <s:element minOccurs="0" maxOccurs="1" name="Opcionales" type="tns:ArrayOfOpcional"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CondicionIVAReceptorId" type="s:int"/>
                 </s:sequence>
             </s:complexType>
             <s:complexType name="ArrayOfCbteAsoc">
