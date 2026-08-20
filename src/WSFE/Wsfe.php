@@ -305,6 +305,14 @@ class Wsfe extends Invoice
             }
             $document->FeDetReq->FECAEDetRequest->{'Opcionales'} = $arrayOpcionales;
         }
+
+        if (isset($invoice->fechaVencimientoPago)) {
+            $document->FeDetReq->FECAEDetRequest->{'FchVtoPago'} = $invoice->fechaVencimientoPago;
+        }
+
+        if (isset($invoice->condicionIVAReceptorId)) {
+            $document->FeDetReq->FECAEDetRequest->{'CondicionIVAReceptorId'} = $invoice->condicionIVAReceptorId;
+        }
     }
 
     /*
