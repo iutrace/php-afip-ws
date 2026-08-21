@@ -140,6 +140,14 @@ trait Validaciones
                 'arraySubtotalesIVA' => v::optional(v::objectType()),
                 'arrayOpcionales' => v::optional(v::objectType()),
                 'importeOtrosTributos' => v::optional(v::floatVal()->between(0, 9999999999999.99)),
+                // RG 5616: required on every WSFEv1 comprobante, not just FCE.
+                // Missing from these rules meant validarDatos() looked it up
+                // via $reglas->{$key} on a stdClass with no such property —
+                // an undefined-property warning that PHP resolves to null
+                // (Attribute treats a null rule as "no constraint", so it
+                // never actually failed validation) but that some runtimes'
+                // error handlers escalate into a real exception.
+                'condicionIVAReceptorId' => v::optional(v::intVal()),
             ];
         } elseif ($this->ws === 'wsmtxca') {
             $wsReglas = [
